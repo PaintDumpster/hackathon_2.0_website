@@ -1,7 +1,18 @@
-from flask import Flask
+from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-@app.route("/")
-def hello_world():
-    return "<p>Hello, World!</p>"
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/models', methods=['POST'])
+def upload():
+    if request.method == 'POST':
+        # Handle the file upload here
+        # For example, save the file to a directory or process it
+        pass
+    return render_template('models.html')
+
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0", port=3000)
