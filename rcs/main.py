@@ -6,7 +6,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/models', methods=['POST'])
+@app.route('/models', methods=['GET','POST'])
 def upload():
     if request.method == 'POST':
         # Handle the file upload here
