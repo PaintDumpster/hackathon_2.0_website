@@ -12,4 +12,4 @@
 *.vsix
 
 #files
-__pycache__/
+.hackathon_4/rcs/__pycache__/
