@@ -7,8 +7,11 @@
 </head>
 <body>
     <h1> UPLOAD YOUR MODELS </h1>
-    <p><input type="text" name="model"></p>
-    <p><input type = "submit" value = "UPLOAD!" /></p>
+    <form action="/models" method="post" enctype="multipart/form-data">
+        <p><input type="file" name="model" accept=".obj, .stl, .gbl"></p>
+        <p><input type = "submit" value = "UPLOAD!" /></p>
+    </form>
+    
 
 </body>
 </html>

@@ -6,12 +6,16 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/models', methods=['POST'])
+@app.route('/models', methods=['GET','POST'])
 def upload():
     if request.method == 'POST':
         # Handle the file upload here
+        file = request.files['file']
+        if file:
+            # Save the file or process it
+            filename = file.filename
+            file.save(f'uploads/{filename}')
         # For example, save the file to a directory or process it
-        pass
     return render_template('models.html')
 
 if __name__ == "__main__":
