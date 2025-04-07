@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
@@ -6,8 +6,12 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/models')
-def hello():
+@app.route('/models', methods=['POST'])
+def upload():
+    if request.method == 'POST':
+        # Handle the file upload here
+        # For example, save the file to a directory or process it
+        pass
     return render_template('models.html')
 
 if __name__ == "__main__":
