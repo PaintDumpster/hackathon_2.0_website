@@ -22,7 +22,11 @@ def index():
 def upload():
     if request.method == 'POST':
         # Handle the file upload here
-        file = request.files['model']
+        file = request.files.get['model']
+        model_name = request.form.get('model_name')
+        model_description = request.form.get('model_description')
+        prompt_used = request.form.get('prompt_used')
+        tags = request.form.get('tags')
         if file:
             filename = file.filename
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
