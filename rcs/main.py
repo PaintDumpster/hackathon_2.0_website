@@ -31,8 +31,7 @@ def upload():
         model_description = request.form.get('model_description')
         prompt_used = request.form.get('prompt_used')
         tags = request.form.get('tags')
-        # Handle the file upload here
-        if file:
+        if file and file.filename:
             filename = file.filename
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             slug = slugify(model_name or filename)
@@ -48,7 +47,7 @@ def upload():
         else: 
             return "No file uploaded", 400
 
-    return render_template('uploads.html')
+    return render_template('upload.html')
 
 @app.route('/model/<slug>')
 def model_detail(slug):
