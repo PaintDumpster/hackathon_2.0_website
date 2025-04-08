@@ -18,7 +18,7 @@ for filename in os.listdir(UPLOAD_FOLDER):
 def index():
     return render_template('index.html', models=uploaded_models)
 
-@app.route('/models', methods=['GET','POST'])
+@app.route('/upload', methods=['GET','POST'])
 def upload():
     if request.method == 'POST':
         # Handle the file upload here
