@@ -16,9 +16,9 @@
             <h1>Welcome to GG Worlds</h1>
             <p>Your Ultimate 3D Models Library: Fetch, Download, Buy, and Sell your 3D Models</p>
             <div class="entrance-buttons">
-                <a href="about.html" class="button">About</a>
-                <a href="http://127.0.0.1:5000/models" class="button">Upload</a>
-                <a href="community.html" class="button">Join Community</a>
+                <a href="/about" class="button">About</a>
+                <a href="/upload" class="button">Upload</a>
+                <a href="/community" class="button">Join Community</a>
             </div>
         </div>
     </div>
@@ -32,102 +32,21 @@
             <div class="models-grid">
                 {% for model in models %}
                 <div class="model-item">
-                    <!-- In production, embed 3D viewer here -->
-                    <model-viewer src="{{ model.path }}" alt="{{ model.name }}" auto-rotate camera-controls></model-viewer>
-                    <p>{{ model.name }}</p>
-                    <p>{{ model.description }}</p>
+                    <a href="/model/{{ model.slug }}">
+                        <model-viewer
+                        src="{{ model.path }}"
+                        alt="{{ model.name }}"
+                        auto-rotate
+                        camera-controls>
+                        </model-viewer>
+                    </a>
+                
+                    <p><strong>Name:</strong> {{ model.name }}</p>
+                    <p><strong>Description:</strong> {{ model.description }}</p>
+                    <p><strong>Prompt Used:</strong> {{ model.prompt_used }}</p>
+                    <p><strong>Tags:</strong> {{ model.tags }}</p>
                 </div>
                 {% endfor %}
             </div>
         </div>
     </div>
-<style>
-    body {
-        margin: 0;
-        font-family: Arial, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    }
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
-        background-color: #b107ea; /* Steel blue background */
-        color: white;
-    }
-    .header h1 {
-        margin: 0;
-        font-size: 24px;
-    }
-    .header .nav-buttons {
-        display: flex;
-        gap: 10px;
-    }
-    .header .nav-buttons a {
-        text-decoration: none;
-        color: rgb(255, 255, 255);
-        padding: 8px 12px;
-        border: 1px solid white;
-        border-radius: 5px;
-        transition: background-color 0.3s, color 0.3s;
-    }
-    .header .nav-buttons a:hover {
-        background-color: #b107ea;
-        color: #b107ea; /* Steel blue text */
-    }
-    .library {
-        padding: 20px;
-        margin: 0 auto;
-        max-width: 1200px;
-        box-sizing: border-box;
-        background-color: #b107ea; /* Light blue background */
-        border: 2px solid #b107ea; /* Steel blue border */
-        border-radius: 10px;
-    }
-    .models-grid {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 20px;
-    }
-    .row {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-    }
-    .model-item {
-        flex: 1 1 calc(33.333% - 20px);
-        box-sizing: border-box;
-        text-align: center;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        background-color: #ffffff; /* White background */
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .model-item:hover {
-        transform: scale(1.05);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-    .model-item img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 4px;
-        border: 2px solid #4682b4; /* Steel blue border */
-    }
-    .model-item p {
-        margin-top: 10px;
-        font-size: 14px;
-        color: #333;
-    }
-    .model-item p:hover {
-        color: #4682b4; /* Steel blue text on hover */
-    }
-</style>
-<div class="header">
-    <h1>GG Worlds</h1>
-    <div class="nav-buttons">
-        <a href="about.html">About</a>
-        <a href="upload.html">Upload</a>
-        <a href="community.html">Join Community</a>
-    </div>
-</div>
