@@ -32,10 +32,19 @@
             <div class="models-grid">
                 {% for model in models %}
                 <div class="model-item">
-                    <!-- In production, embed 3D viewer here -->
-                    <model-viewer src="{{ model.path }}" alt="{{ model.name }}" auto-rotate camera-controls></model-viewer>
-                    <p>{{ model.name }}</p>
-                    <p>{{ model.description }}</p>
+                    <a href="/model/{{ model.slug }}">
+                        <model-viewer
+                        src="{{ model.path }}"
+                        alt="{{ model.name }}"
+                        auto-rotate
+                        camera-controls>
+                        </model-viewer>
+                    </a>
+                
+                    <p><strong>Name:</strong> {{ model.name }}</p>
+                    <p><strong>Description:</strong> {{ model.description }}</p>
+                    <p><strong>Prompt Used:</strong> {{ model.prompt_used }}</p>
+                    <p><strong>Tags:</strong> {{ model.tags }}</p>
                 </div>
                 {% endfor %}
             </div>
