@@ -30,18 +30,38 @@ def upload():
         model_name = request.form.get('model_name')
         description = request.form.get('description')
         # Handle the file upload here
+<<<<<<< HEAD
         if file:
+=======
+        file = request.files.get['model']
+        model_name = request.form.get('model_name')
+        model_description = request.form.get('model_description')
+        prompt_used = request.form.get('prompt_used')
+        tags = request.form.get('tags')
+        if file and file.filename:
+>>>>>>> 0320e8f278a982e5042bdf0e6c6f2b2c4870ebf5
             filename = file.filename
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             slug = slugify(model_name or filename)
             uploaded_models.append({
+<<<<<<< HEAD
             'slug': slug,
             'name': model_name or filename,
             'path': f'/uploads/{filename}',
             'description': description or  'Uploaded 3D landmark'
+=======
+                'name': model_name or filename,  # Use the filename if name is not provided
+                'path': f'/uploads/{filename}',
+                'description': model_description or 'No description provided',
+                'prompt_used': prompt_used or 'N/A',
+                'tags': tags or 'No tags'
+>>>>>>> 0320e8f278a982e5042bdf0e6c6f2b2c4870ebf5
             })
             return redirect(url_for('index'))
+        else: 
+            return "No file uploaded", 400
 
+<<<<<<< HEAD
     return render_template('uploads.html')
 
 @app.route('/model/<slug>')
@@ -50,6 +70,9 @@ def model_detail(slug):
         if model['slug'] == slug:
             return render_template('model_details.html', model=model)
     return "Model not found", 404
+=======
+    return render_template('upload.html')
+>>>>>>> 0320e8f278a982e5042bdf0e6c6f2b2c4870ebf5
 
 if __name__ == "__main__":
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
