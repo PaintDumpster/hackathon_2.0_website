@@ -6,6 +6,8 @@
     <title>GG Worlds - 3D Models Library</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
 </head>
 <body>
     <!-- Entrance Page -->
@@ -27,73 +29,15 @@
     <h2>3D Models Library</h2>
     <div class="models-grid">
         <div class="row">
-            <div class="model-item">
-                <img src="model1.jpg" alt="Model 1">
-                <p>Model 1 Description</p>
-            </div>
-            <div class="model-item">
-                <img src="model2.jpg" alt="Model 2">
-                <p>Model 2 Description</p>
-            </div>
-            <div class="model-item">
-                <img src="model3.jpg" alt="Model 3">
-                <p>Model 3 Description</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="model-item">
-                <img src="model4.jpg" alt="Model 4">
-                <p>Model 4 Description</p>
-            </div>
-            <div class="model-item">
-                <img src="model5.jpg" alt="Model 5">
-                <p>Model 5 Description</p>
-            </div>
-            <div class="model-item">
-                <img src="model6.jpg" alt="Model 6">
-                <p>Model 6 Description</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="model-item">
-                <img src="model7.jpg" alt="Model 7">
-                <p>Model 7 Description</p>
-            </div>
-            <div class="model-item">
-                <img src="model8.jpg" alt="Model 8">
-                <p>Model 8 Description</p>
-            </div>
-            <div class="model-item">
-                <img src="model9.jpg" alt="Model 9">
-                <p>Model 9 Description</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="model-item">
-                <img src="model10.jpg" alt="Model 10">
-                <p>Model 10 Description</p>
-            </div>
-            <div class="model-item">
-                <img src="model11.jpg" alt="Model 11">
-                <p>Model 11 Description</p>
-            </div>
-            <div class="model-item">
-                <img src="model12.jpg" alt="Model 12">
-                <p>Model 12 Description</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="model-item">
-                <img src="model13.jpg" alt="Model 13">
-                <p>Model 13 Description</p>
-            </div>
-            <div class="model-item">
-                <img src="model14.jpg" alt="Model 14">
-                <p>Model 14 Description</p>
-            </div>
-            <div class="model-item">
-                <img src="model15.jpg" alt="Model 15">
-                <p>Model 15 Description</p>
+            <div class="models-grid">
+                {% for model in models %}
+                <div class="model-item">
+                    <!-- In production, embed 3D viewer here -->
+                    <model-viewer src="{{ model.path }}" alt="{{ model.name }}" auto-rotate camera-controls></model-viewer>
+                    <p>{{ model.name }}</p>
+                    <p>{{ model.description }}</p>
+                </div>
+                {% endfor %}
             </div>
         </div>
     </div>

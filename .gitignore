@@ -13,3 +13,12 @@
 
 #files
 __pycache__/
+
+
+# Ignore Python virtual environments
+hackathon2/
+hackathon2_branchenv/
+env/
+venv/
+__pycache__/
+*.pyc
