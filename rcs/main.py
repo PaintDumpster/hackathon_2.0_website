@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, send_from_directory
 import os
+
 app = Flask(__name__)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 UPLOAD_FOLDER = os.path.join(BASE_DIR, 'uploads')
@@ -23,10 +24,8 @@ def upload():
         # Handle the file upload here
         file = request.files['model']
         if file:
-            # Save the file or process it
             filename = file.filename
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        # For example, save the file to a directory or process it
             uploaded_models.append({
             'name': filename,
             'path': f'/uploads/{filename}',
@@ -39,8 +38,6 @@ def upload():
 if __name__ == "__main__":
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
     app.run(debug=True, host="0.0.0.0", port=3000)
-
-from flask import send_from_directory
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
