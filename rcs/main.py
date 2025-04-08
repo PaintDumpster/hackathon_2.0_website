@@ -23,6 +23,10 @@ for filename in os.listdir(UPLOAD_FOLDER):
 def index():
     return render_template('index.html', models=uploaded_models)
 
+@app.route('/community')
+def index():
+    return render_template('community.html', models=uploaded_models)
+
 @app.route('/upload', methods=['GET','POST'])
 def upload():
     if request.method == 'POST':
