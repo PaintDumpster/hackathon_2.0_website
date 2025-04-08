@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, send_from_
 import os
 import re
 
+
 def slugify(name):
     return re.sub(r'[\W_]+', '-', name.lower()).strip('-')
 
@@ -31,6 +32,7 @@ def upload():
         model_description = request.form.get('model_description')
         prompt_used = request.form.get('prompt_used')
         tags = request.form.get('tags')
+        trellis_link = request.form.get('trellis_link')
         if file and file.filename:
             filename = file.filename
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
@@ -41,7 +43,8 @@ def upload():
                 'path': f'/uploads/{filename}',
                 'description': model_description or 'No description provided',
                 'prompt_used': prompt_used or 'N/A',
-                'tags': tags or 'No tags'
+                'tags': tags or 'No tags',
+                'trellis_link': trellis_link or 'N/A',
             })
             return redirect(url_for('index'))
         else: 
@@ -56,10 +59,13 @@ def model_detail(slug):
             return render_template('model_details.html', model=model)
     return "Model not found", 404
 
-if __name__ == "__main__":
-    os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
-    app.run(debug=True, host="0.0.0.0", port=3000)
+
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+
+if __name__ == "__main__":
+    os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+    app.run(debug=True, host="0.0.0.0", port=3000)
+
