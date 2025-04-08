@@ -1,5 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
 import os
+import re
+
+def slugify(name):
+    return re.sub(r'[\W_]+', '-', name.lower()).strip('-')
 
 app = Flask(__name__)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -10,6 +14,7 @@ uploaded_models = []
 for filename in os.listdir(UPLOAD_FOLDER):
     if filename.endswith(".glb"):
         uploaded_models.append({
+            'slug': slugify(filename),
             'name': filename,
             'path': f'/uploads/{filename}',
         })
@@ -21,19 +26,30 @@ def index():
 @app.route('/upload', methods=['GET','POST'])
 def upload():
     if request.method == 'POST':
+        file = request.files.get('model')
+        model_name = request.form.get('model_name')
+        description = request.form.get('description')
         # Handle the file upload here
-        file = request.files['model']
         if file:
             filename = file.filename
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            slug = slugify(model_name or filename)
             uploaded_models.append({
-            'name': filename,
+            'slug': slug,
+            'name': model_name or filename,
             'path': f'/uploads/{filename}',
-            'description': 'Uploaded 3D landmark'
+            'description': description or  'Uploaded 3D landmark'
             })
             return redirect(url_for('index'))
 
-    return render_template('models.html')
+    return render_template('uploads.html')
+
+@app.route('/model/<slug>')
+def model_detail(slug):
+    for model in uploaded_models:
+        if model['slug'] == slug:
+            return render_template('model_details.html', model=model)
+    return "Model not found", 404
 
 if __name__ == "__main__":
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
