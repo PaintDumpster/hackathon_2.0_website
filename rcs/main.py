@@ -28,9 +28,7 @@ def upload():
     if request.method == 'POST':
         file = request.files.get('model')
         model_name = request.form.get('model_name')
-        description = request.form.get('model_description')
-        # Handle the file upload here
-
+        model_description = request.form.get('model_description')
         prompt_used = request.form.get('prompt_used')
         tags = request.form.get('tags')
         if file and file.filename:
