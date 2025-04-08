@@ -32,7 +32,15 @@
             <div class="models-grid">
                 {% for model in models %}
                 <div class="model-item">
-                    <model-viewer src="{{ model.path }}" alt="{{ model.name }}" auto-rotate camera-controls></model-viewer>
+                    <a href="/model/{{ model.slug }}">
+                        <model-viewer
+                        src="{{ model.path }}"
+                        alt="{{ model.name }}"
+                        auto-rotate
+                        camera-controls>
+                        </model-viewer>
+                    </a>
+                
                     <p><strong>Name:</strong> {{ model.name }}</p>
                     <p><strong>Description:</strong> {{ model.description }}</p>
                     <p><strong>Prompt Used:</strong> {{ model.prompt_used }}</p>
