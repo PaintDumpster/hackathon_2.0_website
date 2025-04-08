@@ -1,6 +1,23 @@
-<h1>Your 3D Result from Trellis</h1>
-<video width="600" controls autoplay loop>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Your Generated 3D Model</title>
+</head>
+<body>
+    {% if error %}
+    <h2 style="color:red;">⚠ {{ error }}</h2>
+    {% else %}
+<h1>🎉 Your 3D model is ready!</h1>
+
+<video width="640" height="480" controls>
     <source src="{{ video_url }}" type="video/mp4">
     Your browser does not support the video tag.
 </video>
-<a href="/">⬅ Back to Home</a>
+
+<p>⬇ If a `.glb` file was generated, download it from Trellis and upload it to the community:</p>
+
+<a href="/upload">⬆ Upload My 3D Model</a>
+{% endif %}
+</body>
+</html>

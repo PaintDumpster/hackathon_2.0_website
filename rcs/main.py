@@ -2,6 +2,23 @@ from flask import Flask, render_template, request, redirect, url_for, send_from_
 import os
 import re
 
+from gradio_client import Client, handle_file
+
+def generate_3d_from_image(image_path):
+    print(f"[Trellis] Sending image to Trellis: {image_path}")  # 👈 add this for debug
+    client = Client("JeffreyXiang/TRELLIS")
+    result = client.predict(
+        image=handle_file(image_path),
+        multiimages=[],
+        seed=0,
+        ss_guidance_strength=7.5,
+        ss_sampling_steps=12,
+        slat_guidance_strength=3,
+        slat_sampling_steps=12,
+        multiimage_algo="stochastic",
+        api_name="/image_to_3d"
+    )
+    return result
 
 def slugify(name):
     return re.sub(r'[\W_]+', '-', name.lower()).strip('-')
@@ -32,7 +49,6 @@ def upload():
         model_description = request.form.get('model_description')
         prompt_used = request.form.get('prompt_used')
         tags = request.form.get('tags')
-        trellis_link = request.form.get('trellis_link')
         if file and file.filename:
             filename = file.filename
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
@@ -44,7 +60,6 @@ def upload():
                 'description': model_description or 'No description provided',
                 'prompt_used': prompt_used or 'N/A',
                 'tags': tags or 'No tags',
-                'trellis_link': trellis_link or 'N/A',
             })
             return redirect(url_for('index'))
         else: 
@@ -64,6 +79,33 @@ def model_detail(slug):
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+
+@app.route('/generate_3d', methods=['GET', 'POST'])
+def generate_3d():
+    if request.method == 'POST':
+        image = request.files.get('image')
+        if image:
+            image_path = os.path.join(app.config['UPLOAD_FOLDER'], image.filename)
+            image_path = os.path.normpath(image_path).replace("\\", "/")  # ✅ Fix backslashes
+            image.save(image_path)
+            # ✅ NEW: Let the OS finish writing the file (important for Windows)
+            import time
+            time.sleep(0.5)
+
+            print(f"[Trellis] Sending image to Trellis: {image_path}")
+            
+            try:
+                result = generate_3d_from_image(image_path)
+                video_url = result['video']  # .mp4 preview
+
+                return render_template('trellis_result.html', video_url=video_url, info="This is a temporary preview. Download your .glb from Trellis directly.")
+            except Exception as e:
+                print("Trellis Error:", e)
+                return render_template('trellis_result.html',
+                                    error="Trellis failed to generate. Try again later.")
+
+    return render_template('generate_3d.html')
+
 
 if __name__ == "__main__":
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
