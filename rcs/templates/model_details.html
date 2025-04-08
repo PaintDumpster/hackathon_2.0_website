@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ model.name }}</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background-color: #f5f5f5;
+        text-align: center;
+    }
+    h1 {
+        
+    }
+    .download-btn {
+        padding: 10px 20px;
+        background-color: #b107ea;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-top: 15px;
+        cursor: pointer;
+    }
+    a {
+        color: #333;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 20px;
+    }
+    </style>
+</head>
+<body>
+    <h1>{{ model.name }}</h1>
+
+    <model-viewer
+    src="{{ model.path }}"
+    alt="{{ model.name }}"
+    auto-rotate
+    camera-controls
+    style="width: 600px; height: 400px;">
+    </model-viewer>
+
+    <p>{{ model.description }}</p>
+
+    <!-- 💾 Download Button -->
+    <a href="{{ model.path }}" download>
+    <button class="download-btn">⬇ Download Model</button>
+    </a>
+
+    <br>
+    <a href="/">⬅ Back to Library</a>
+</body>
+</html>
