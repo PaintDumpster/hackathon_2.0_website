@@ -41,6 +41,14 @@ for filename in os.listdir(UPLOAD_FOLDER):
 def index():
     return render_template('index.html', models=uploaded_models)
 
+@app.route('/community')
+def community():
+    return render_template('community.html', models=uploaded_models)
+
+@app.route('/about')
+def about():
+    return render_template('about.html', models=uploaded_models)
+
 @app.route('/upload', methods=['GET','POST'])
 def upload():
     if request.method == 'POST':
@@ -59,7 +67,7 @@ def upload():
                 'path': f'/uploads/{filename}',
                 'description': model_description or 'No description provided',
                 'prompt_used': prompt_used or 'N/A',
-                'tags': tags or 'No tags',
+                'tags': tags or 'No tags'
             })
             return redirect(url_for('index'))
         else: 
