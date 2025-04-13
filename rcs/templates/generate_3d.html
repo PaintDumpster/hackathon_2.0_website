@@ -3,15 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <title>Generate 3D from Image</title>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 40px;
+    }
+    input[type="file"],
+    input[type="submit"] {
+    padding: 10px;
+    font-size: 16px;
+    }
+    input[type="submit"] {
+    background-color: #b107ea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+</style>
 </head>
 <body>
+
 <h1>Upload an image to generate your 3D model</h1>
+
 <form method="POST" enctype="multipart/form-data">
     <input type="file" name="image" accept="image/*" required><br><br>
     <input type="submit" value="Generate 3D">
 </form>
+
 <br>
 <a href="/">⬅ Back to Home</a>
+
 </body>
 </html>
+
 

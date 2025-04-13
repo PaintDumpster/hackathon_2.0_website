@@ -2,22 +2,79 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Your Generated 3D Model</title>
+<title>Your 3D Model</title>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 30px;
+    background: #f4f4f4;
+    }
+    form {
+    margin-top: 30px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    }
+    input, textarea {
+    display: block;
+    width: 300px;
+    margin: 10px auto;
+    padding: 8px;
+    }
+    button {
+    padding: 10px 20px;
+    background-color: #b107ea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    }
+    video {
+    margin-top: 20px;
+    width: 640px;
+    max-width: 100%;
+    }
+</style>
 </head>
 <body>
-    {% if error %}
-    <h2 style="color:red;">⚠ {{ error }}</h2>
-    {% else %}
+
 <h1>🎉 Your 3D model is ready!</h1>
 
-<video width="640" height="480" controls>
+{% if video_url %}
+    <video controls>
     <source src="{{ video_url }}" type="video/mp4">
     Your browser does not support the video tag.
-</video>
-
-<p>⬇ If a `.glb` file was generated, download it from Trellis and upload it to the community:</p>
-
-<a href="/upload">⬆ Upload My 3D Model</a>
+    </video>
 {% endif %}
+
+{% if glb_url %}
+    <p>⬇ Download your generated .glb file:</p>
+    <a href="{{ glb_url }}" download>Download .glb</a>
+
+    <hr>
+    <h3>📤 Share your model with the community</h3>
+    <form method="POST" action="/upload" enctype="multipart/form-data">
+    <input type="hidden" name="glb_url" value="{{ glb_url }}">
+    <input type="hidden" name="input_image_url" value="{{ input_image }}">
+
+    <input type="text" name="model_name" placeholder="Model Name" value="{{ model_name }}" required>
+    <input type="text" name="creator_name" placeholder="Your Name" required>
+    <textarea name="model_description" placeholder="Description..." required></textarea>
+    <input type="text" name="prompt_used" placeholder="Prompt used" value="{{ prompt_used }}">
+    <input type="text" name="tags" placeholder="Tags (comma separated)" required>
+
+    <button type="submit">✅ Share to Community</button>
+    </form>
+{% else %}
+    <p style="color:red;">⚠️ GLB model generation failed. Only video is available.</p>
+{% endif %}
+
+<br><br>
+<a href="/">⬅ Back to Home</a>
+
 </body>
 </html>
