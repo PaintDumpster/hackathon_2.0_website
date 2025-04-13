@@ -2,8 +2,9 @@
 
 Delivery for HACKATHON_2.0.
 
-> **Faculty:**<br> Stasya Fedorova
-> **Team Members:**<br> Anka Ramy<br> Cantuarias Salvador<br> Elmalouli Nouhaila<br> Ozgok Misra<br> Papakosta Elena<br>
+> **Faculty:**<br> -Fedorova Stasja<br>
+
+> **Team Members:**<br> -Anka Ramy<br> -Cantuarias Salvador<br> Elmalouli Nouhaila<br> -Ozgok Misra<br> -Papakosta Elena<br>
 
 
 > THE AIM OF THIS HACKATHON IS TO BUILD A WEB APP BASED ON THE FLASK LIBRARY. THE APP SHOULD HAVE HAVE DYNAMIC URLS AND GET/POST FUNCTIONS. THE APP SHOULD SERVE IN SME WAY TO OUR STUDIO PROJECT.
