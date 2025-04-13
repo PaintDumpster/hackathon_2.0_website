@@ -24,6 +24,16 @@
         margin-top: 15px;
         cursor: pointer;
     }
+    .info-block {
+        margin-top: 20px;
+        font-size: 16px;
+        color: #333;
+    }
+    .preview-img {
+        max-width: 300px;
+        margin: 20px auto;
+        border-radius: 8px;
+    }
     a {
         color: #333;
         text-decoration: none;
@@ -44,12 +54,26 @@
     </model-viewer>
 
     <p>{{ model.description }}</p>
+    <div class="info-block">
+        {% if model.creator %}
+            <p><strong>Creator:</strong> {{ model.creator }}</p>
+        {% endif %}
+        {% if model.prompt_used %}
+            <p><strong>Prompt:</strong> {{ model.prompt_used }}</p>
+        {% endif %}
+        {% if model.tags %}
+            <p><strong>Tags:</strong> {{ model.tags }}</p>
+        {% endif %}
+    </div>
 
+    {% if model.input_image %}
+        <h2>Input Image</h2>
+        <img src="{{ model.input_image }}" alt="Input Image" class="preview-img">
+    {% endif %}
     <!-- 💾 Download Button -->
     <a href="{{ model.path }}" download>
     <button class="download-btn">⬇ Download Model</button>
     </a>
-
     <br>
     <a href="/">⬅ Back to Library</a>
 </body>
