@@ -2,9 +2,9 @@
 
 ## **Delivery for HACKATHON_2.0**
 
-> **Faculty:**<br> -Fedorova Stasja<br>
+> **Faculty:**<br> -[Fedorova Stasja](https://www.linkedin.com/in/stasja-fedorova/)<br>
 
-> **Team Members:**<br> -Anka Ramy<br> -Cantuarias Salvador<br> -Elmalouli Nouhaila<br> -Ozgok Misra<br> -Papakosta Elena<br>
+> **Team Members:**<br> -[Anka Ramy](https://www.linkedin.com/in/ramyanka/)<br> -[Cantuarias Salvador](https://www.linkedin.com/in/salvador-cantuarias-bb5715268/)<br> -[Elmalouli Nouhaila](https://www.linkedin.com/in/nouhaila-elmalouli-46517a208/)<br> -[Ozgok Misra](https://www.linkedin.com/in/m%C4%B1sra-serenay-%C3%B6zg%C3%B6k-gen%C3%A7-857530208/)<br> -[Papakosta Elena](https://www.linkedin.com/in/eleni-papakosta-035263236/)<br>
 
 ## **OUR GENERAL IDEA:**
 THIS IS A WEB APP BASED ON FLASK. THE WEB APP SERVES AS AN ONLINE EXTENSION FOR OUR 3RD TERM STUDIO PROJECT. FOR MORE INFORMATION ABOUT THE PROJECT, PLEASE VISIT THE [PROJECT'S REPOSITORY](https://github.com/PaintDumpster/Applied_research_studio).
