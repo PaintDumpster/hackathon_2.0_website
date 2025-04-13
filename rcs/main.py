@@ -60,11 +60,11 @@ def upload():
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
-        name = request.form['name']
-        surname = request.form['surname']
-        email = request.form['email']
-        profession = request.form['profession']
-        password = request.form['password']
+        name = request.form('name')
+        surname = request.form('surname')
+        email = request.form('email')
+        profession = request.form('profession')
+        password = request.form('password')
         # Handle/store the data here
         return redirect('/')  # or a success page
     return render_template('signup.html')

@@ -133,4 +133,35 @@
       font-size: 28px;
       margin-bottom: 40px;
     }
-
+    
+.signup-container {
+      max-width: 500px;
+      margin: 60px auto;
+      background-color: #111;
+      padding: 30px;
+      border-radius: 10px;
+      border: 2px solid #A32CC4;
+      box-shadow: 0 0 15px #A32CC4;
+    }
+    
+    .signup-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .signup-form input,
+    .signup-form select {
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #A32CC4;
+      background-color: #000;
+      color: white;
+      font-family: 'Orbitron', sans-serif;
+    }
+    
+    .signup-form input::placeholder {
+      color: #bbb;
+    }
+    
