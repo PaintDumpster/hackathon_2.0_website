@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Models Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upload Your 3D Model</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
-<body>
-    <h1> UPLOAD YOUR MODELS </h1>
+<body class="signup-body">
+  <div class="signup-container">
+    <h1 class="main-title">Upload Your 3D Model</h1>
     <form action="/upload" method="post" enctype="multipart/form-data">
-        <p><input type="file" name="model" accept=".obj, .stl, .glb"></p>
-        <p><input type="text" name="model_name" placeholder="Model_Name"></p>
-        <p><input type="text" name="model_description" placeholder="model_Description"></p>
-        <p><input type="text" name="prompt_used" placeholder="prompt_used"></p>
-        <p><input type="text" name="tags" placeholder="tags"></p>
-        <p>
-            <label for="trellis_link">Trellis Embed Link (optional):</label><br>
-            <input type="text" name="trellis_link" placeholder="https://embed.trellis.design/?fileId=..." style="width: 100%;">
-        </p>
-        <p><input type = "submit" value = "UPLOAD!" /></p>
-    
-    </form>
+        <input type="file" name="model" class="input-field" required><br>
+        <input type="text" name="model_name" placeholder="Model Name" class="input-field" required><br>
+        <input type="text" name="model_description" placeholder="Model Description" class="input-field"><br>
+        <input type="text" name="prompt_used" placeholder="Prompt Used" class="input-field"><br>
+        <input type="text" name="tags" placeholder="Tags" class="input-field"><br>
+        <input type="text" name="trellis_link" placeholder="https://embed.trellis.design/?fileId=..." class="input-field"><br>
+        <input type="submit" value="Upload Model" class="signup-btn">
+      </form>
+      
+  </div>
 </body>
 </html>

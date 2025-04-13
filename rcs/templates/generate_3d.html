@@ -3,33 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Generate 3D from Image</title>
-<style>
-    body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 40px;
-    }
-    input[type="file"],
-    input[type="submit"] {
-    padding: 10px;
-    font-size: 16px;
-    }
-    input[type="submit"] {
-    background-color: #b107ea;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    }
-    #loading {
-    margin-top: 30px;
-    font-size: 18px;
-    color: #b107ea;
-    display: none;
-    }
-</style>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
 </head>
-<body>
+<body class="body_misra">
 
 <h1>Upload an image to generate your 3D model</h1>
 

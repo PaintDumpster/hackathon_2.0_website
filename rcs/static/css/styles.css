@@ -143,7 +143,7 @@
       border: 2px solid #A32CC4;
       box-shadow: 0 0 15px #A32CC4;
     }
-    
+
     .signup-form {
       display: flex;
       flex-direction: column;
@@ -182,7 +182,7 @@
 }
     
 
-
+/*about us*/
 .aboutus-container {
   .subtitle {
     background-color: black;
@@ -240,7 +240,7 @@
 }
 
 .team-member p {
-  font-size: 15px;
+  font-size: 20px;
   margin: 5px 0;
 }
 
@@ -249,20 +249,121 @@
   font-size: 15px;
   text-decoration: underline;
 }
+
 .linkedin-btn {
   display: inline-block;
-  padding: 6px 12px;
-  margin-top: 8px;
+  margin: 10px auto 0 auto;
+  padding: 5px 12px;
   background-color: #A32CC4;
-  color: #000;
+  color: white;
   font-weight: bold;
-  border-radius: 6px;
-  font-size: 12px;
+  border: none;
+  border-radius: 5px;
   text-decoration: none;
-  transition: background-color 0.3s;
+  box-shadow: 0 0 5px #A32CC4;
+  transition: transform 0.2s ease;
 }
 
 .linkedin-btn:hover {
-  background-color: white;
-  color: #A32CC4;
+  transform: scale(1.05);
 }
+
+.team-member {
+  text-align: center; 
+}
+
+/*misra generate 3d style*/
+.body_misra {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 40px;
+  }
+  input[type="file"],
+  input[type="submit"] {
+  padding: 10px;
+  font-size: 16px;
+  }
+  input[type="submit"] {
+  background-color: #b107ea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  }
+  #loading {
+  margin-top: 30px;
+  font-size: 18px;
+  color: #b107ea;
+  display: none;
+  }
+
+/*upload3D*/
+.upload-body {
+  background-color: black;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-container {
+  background-color: #111;
+  padding: 40px;
+  border: 2px solid #A32CC4;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #A32CC4;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: black;
+  color: white;
+  border: 2px solid #A32CC4;
+  border-radius: 6px;
+  font-family: 'Orbitron', sans-serif;
+}
+.signup-body {
+  background-color: black;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: black;
+  color: white;
+  border: 2px solid #A32CC4;
+  border-radius: 6px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.signup-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: black;
+  color: #A32CC4;
+  border: 2px solid #A32CC4;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.signup-btn:hover {
+  background-color: #A32CC4;
+  color: white;
+}
+
