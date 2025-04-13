@@ -27,9 +27,9 @@ def index():
 def community():
     return render_template('community.html', models=uploaded_models)
 
-@app.route('/aboutus')
+@app.route('/about')
 def about():
-    return render_template('AboutUs.html')  # Match the exact file name!
+    return render_template('about.html')  # Match the exact file name!
 
 @app.route('/upload', methods=['GET','POST'])
 def upload():
