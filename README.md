@@ -1,7 +1,14 @@
 # **BUILD A SERVER!**
+
+Delivery for HACKATHON_2.0.
+
+> **Faculty:**<br> Stasya Fedorova
+> **Team Members:**<br> Anka Ramy<br> Cantuarias Salvador<br> Elmalouli Nouhaila<br> Ozgok Misra<br> Papakosta Elena<br>
+
+
 > THE AIM OF THIS HACKATHON IS TO BUILD A WEB APP BASED ON THE FLASK LIBRARY. THE APP SHOULD HAVE HAVE DYNAMIC URLS AND GET/POST FUNCTIONS. THE APP SHOULD SERVE IN SME WAY TO OUR STUDIO PROJECT.
 
-**OUR IDEA OF WHAT THE WEBSITE SHOULD DO IS THE FOLLOWING:**<br>
+## **OUR IDEA OF WHAT THE WEBSITE SHOULD DO IS THE FOLLOWING:**<br>
 
 1. build a community platform where users of our plugin can upload their models and download others peoples models.<br>
 
