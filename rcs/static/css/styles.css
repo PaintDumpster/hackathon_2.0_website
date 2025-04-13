@@ -183,22 +183,25 @@
     
 
 
-.about-container {
-.subtitle {
-  text-align: center;
-  font-size: 18px;
-  color: white;
-  margin-top: 20px;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
-}}
+.aboutus-container {
+  .subtitle {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    border: 2px solid #A32CC4;
+    border-radius: 10px;
+    box-shadow: 0 0 40px #A32CC4;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: left;
+  }  
 
 .main-subtitle {
-  text-align: left;
-  color: #A32CC4;
-  font-size: 20px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 30px;
   margin: 50px 0 30px;
 }
 
@@ -214,22 +217,26 @@
   color: #ccc;
   font-style: italic;
   margin-bottom: 5px;
+  text-align: center;
 }
 
 
 .team-member img {
-  width: 100%;
+  width: 250px;
   height: 250px;
   object-fit: cover;
   border-radius: 10px;
   border: 2px solid #A32CC4;
-  box-shadow: 0 0 10px #A32CC4;
+  box-shadow: 0 0 40px #A32CC4;
 }
+
 
 .team-member h3 {
   margin-top: 10px;
   font-size: 25px;
   color: #A32CC4;
+  text-align: center;
+  font-weight: bold;
 }
 
 .team-member p {
