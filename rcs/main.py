@@ -29,7 +29,7 @@ def community():
 
 @app.route('/aboutus')
 def about():
-    return render_template('aboutus.html', models=uploaded_models)
+    return render_template('AboutUs.html')  # Match the exact file name!
 
 @app.route('/upload', methods=['GET','POST'])
 def upload():
