@@ -1,0 +1,237 @@
+
+.main-title {
+    text-align: center;
+    font-size: 100px;
+    font-weight: 900;
+    color: #A32CC4; /* or use yellow: #FFD700 */
+    font-family: 'Orbitron', sans-serif;
+    margin: 40px 0 20px;
+  }
+.subtitle {
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    margin-top: -10px;
+    margin-bottom: 30px;
+    font-family: 'Orbitron', sans-serif;
+  }
+.nav-buttons {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    display: flex;
+    gap: 12px;
+  }
+  
+.nav-btn {
+    background-color: rgb(0, 0, 0);
+    color: #A32CC4;
+    padding: 8px 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .nav-btn:hover {
+    background-color: black;
+    color: white;
+  }
+    
+    body {
+      margin: 0;
+      background-color: #000;
+      color: white;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: bold;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #000;
+      border-bottom: 2px solid #A32CC4;
+    }
+
+    .header h1 {
+      color: #A32CC4;
+      font-size: 32px;
+      font-weight: 900;
+      margin: 0;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-buttons a {
+      text-decoration: none;
+      color: white;
+      padding: 10px 20px;
+      border: 2px solid #A32CC4;
+      border-radius: 8px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .nav-buttons a:hover {
+      background-color: #A32CC4;
+      color: black;
+    }
+
+    .library {
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: auto;
+      background-color: #000;
+      border-radius: 12px;
+      border: 2px solid #A32CC4;
+    }
+
+    .models-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .model-item {
+      background-color: #111;
+      border: 2px solid #A32CC4;
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .model-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #A32CC4;
+    }
+
+    model-viewer {
+      width: 100%;
+      height: 250px;
+      border-radius: 8px;
+      background-color: #000;
+    }
+
+    .model-item p {
+      color: white;
+      margin-top: 10px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    h2 {
+      color: #A32CC4;
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
+
+.signup-container {
+      max-width: 500px;
+      margin: 60px auto;
+      background-color: #111;
+      padding: 30px;
+      border-radius: 10px;
+      border: 2px solid #A32CC4;
+      box-shadow: 0 0 15px #A32CC4;
+    }
+    
+    .signup-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .signup-form input,
+    .signup-form select {
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #A32CC4;
+      background-color: #000;
+      color: white;
+      font-family: 'Orbitron', sans-serif;
+    }
+    
+    .signup-form input::placeholder {
+      color: #bbb;
+    }
+.login-link {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: white;
+}
+
+.login-link a {
+  color: #A32CC4;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+    
+
+
+.about-container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+  color: white;
+}
+
+.main-subtitle {
+  text-align: center;
+  color: #A32CC4;
+  font-size: 24px;
+  margin: 50px 0 30px;
+}
+
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.team-member {
+  width: 250px;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.team-member img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #A32CC4;
+  box-shadow: 0 0 10px #A32CC4;
+}
+
+.team-member h3 {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #A32CC4;
+}
+
+.team-member p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.team-member a {
+  color: white;
+  font-size: 13px;
+  text-decoration: underline;
+}

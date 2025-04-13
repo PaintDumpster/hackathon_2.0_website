@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GG Worlds - 3D Models Library</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <script src="script.js" defer></script>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-
 </head>
 <body>
     <!-- Entrance Page -->
     <div id="entrance" class="entrance"></div>
         <div class="entrance-content"></div>
-            <h1>Welcome to GG Worlds</h1>
-            <p>Your Ultimate 3D Models Library: Fetch, Download, Buy, and Sell your 3D Models</p>
-            <div class="entrance-buttons">
-                <a href="/about" class="button">About</a>
-                <a href="/upload" class="button">Upload</a>
-                <a href="/community" class="button">Join Community</a>
-                <a href="/generate_3d" class="button">Generate 3D</a>
+            <h1 class="main-title">Welcome to GG Worlds</h1>
+            <p class="subtitle">
+                From Prompt to Play – Instantly Generate, Share, and Sell Immersive 3D Game Worlds.
+              </p>
+            <div class="nav-buttons">
+                <a href="/about" class="nav-btn">About Us</a>
+                <a href="/upload" class="nav-btn">Upload 3D</a>
+                <a href="/generate_3d" class="nav-btn">Generate 3D</a>
+                <a href="/signup" class="nav-btn">Sign Up</a>
+                <a href="/login" class="nav-btn">Login</a>
             </div>
         </div>
     </div>

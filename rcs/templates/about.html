@@ -4,57 +4,52 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About GG Worlds</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-  <header>
-    <h1>About GG Worlds</h1>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/upload">Upload</a>
-      <a href="/join">Join Community</a>
-    </nav>
-  </header>
-
-  <section class="intro">
-    <h2>What is GG Worlds?</h2>
-    <p>
-      GG Worlds is a Blender plugin powered by AI that allows users to generate game-ready 3D environments in four stages:
-      <strong>topography, street layout, building contours,</strong> and <strong>landmarks</strong>. 
-      Whether you're a game developer, urban designer, or hobbyist, our tool simplifies the complex world of 3D creation.
+  <div class="aboutus-container">
+    <h1 class="main-title">About GG Worlds</h1>
+    <p class="subtitle">
+      GG Worlds is an AI-powered Blender plugin to generate 3D game-ready environments in 4 stages:
+      <strong>Topography</strong>, <strong>Street Layout</strong>, <strong>Building Contours</strong>, and <strong>Landmarks</strong>.
+      Whether you’re in architecture, gaming, or other artistic environments domain — our goal is to bring your vision to life!
     </p>
-  </section>
 
-  <section class="team">
-    <h2>Meet the Architects Behind GG Worlds</h2>
+    <h2 class="main-subtitle">Meet the Architects Behind GG Worlds</h2>
+
     <div class="team-grid">
-      <div class="member">
-        <img src="/rcs/static/nouhaila_elmalouli.jpg" alt="Team Member 1">
+      <div class="team-member">
+        <img src="{{ url_for('static', filename='img/nouhaila_elmalouli.jpg') }}" alt="Nouhaila">
         <h3>Nouhaila ELMALOULI</h3>
         <p>Architect, AI Researcher</p>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
       </div>
-      <div class="member">
-        <img src="{{ url_for('static', filename='images/member2.jpg') }}" alt="Team Member 2">
+      <div class="team-member">
+        <img src="{{ url_for('static', filename='img/ramy_anka.jpg') }}" alt="Ramy">
         <h3>Ramy ANKA</h3>
         <p>Architect, UX Designer</p>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
       </div>
-      <div class="member">
-        <img src="{{ url_for('static', filename='images/member3.jpg') }}" alt="Team Member 3">
+      <div class="team-member">
+        <img src="{{ url_for('static', filename='img/eleni_papakosta.jpg') }}" alt="Eleni">
         <h3>Eleni PAPAKOSTA</h3>
         <p>Architect, 3D Artist</p>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
       </div>
-      <div class="member">
-        <img src="{{ url_for('static', filename='images/member4.jpg') }}" alt="Team Member 4">
+      <div class="team-member">
+        <img src="{{ url_for('static', filename='img/salvador_cantuarias.jpg') }}" alt="Salvador">
         <h3>Salvador CANTUARIAS BRANES</h3>
-        <p>Architect, 3D Artist</p>
+        <p>Architect, Data Scientist</p>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
       </div>
-      <div class="member">
-        <img src="{{ url_for('static', filename='images/member5.jpg') }}" alt="Team Member 5">
-        <h3>Misra OZGOK GENC</h3>
+      <div class="team-member">
+        <img src="{{ url_for('static', filename='img/misra_ozgok.jpg') }}" alt="Misra">
+        <h3>Misra OZGOK GEMC</h3>
         <p>Architect, 3D Artist</p>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
       </div>
     </div>
-  </section>
+  </div>
 
   <footer>
     <p>© 2025 GG Worlds. Built by architects, for creators.</p>

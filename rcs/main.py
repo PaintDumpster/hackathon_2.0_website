@@ -92,8 +92,7 @@ def community():
 def about():
     return render_template('about.html', models=uploaded_models)
 
-
-@app.route('/upload', methods=['GET', 'POST'])
+@app.route('/upload', methods=['GET','POST'])
 def upload():
     if request.method == 'POST':
         file = request.files.get('model')
@@ -153,6 +152,27 @@ def upload():
 
     return render_template('upload.html')
 
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    if request.method == 'POST':
+        name = request.form('name')
+        surname = request.form('surname')
+        email = request.form('email')
+        profession = request.form('profession')
+        password = request.form('password')
+        # Handle/store the data here
+        return redirect('/')  # or a success page
+    return render_template('signup.html')
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        # Check credentials here
+        return redirect('/')  # or a dashboard page
+    return render_template('login.html')
+
 @app.route('/model/<slug>')
 def model_detail(slug):
     for model in uploaded_models:
@@ -210,3 +230,4 @@ if __name__ == "__main__":
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
     app.run(debug=True, host="0.0.0.0", port=3000)
 
+    #return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
