@@ -1,15 +1,15 @@
 # **BUILD A SERVER!**
 
-Delivery for HACKATHON_2.0.
+## **Delivery for HACKATHON_2.0**
 
 > **Faculty:**<br> -Fedorova Stasja<br>
 
-> **Team Members:**<br> -Anka Ramy<br> -Cantuarias Salvador<br> Elmalouli Nouhaila<br> -Ozgok Misra<br> -Papakosta Elena<br>
+> **Team Members:**<br> -Anka Ramy<br> -Cantuarias Salvador<br> -Elmalouli Nouhaila<br> -Ozgok Misra<br> -Papakosta Elena<br>
 
+## **OUR GENERAL IDEA:**
+THIS IS A WEB APP BASED ON FLASK. THE WEB APP SERVES AS AN ONLINE EXTENSION FOR OUR 3RD TERM STUDIO PROJECT. FOR MORE INFORMATION ABOUT THE PROJECT, PLEASE VISIT THE [PROJECT'S REPOSITORY](https://github.com/PaintDumpster/Applied_research_studio).
 
-> THE AIM OF THIS HACKATHON IS TO BUILD A WEB APP BASED ON THE FLASK LIBRARY. THE APP SHOULD HAVE HAVE DYNAMIC URLS AND GET/POST FUNCTIONS. THE APP SHOULD SERVE IN SME WAY TO OUR STUDIO PROJECT.
-
-## **OUR IDEA OF WHAT THE WEBSITE SHOULD DO IS THE FOLLOWING:**<br>
+## **OUR IDEA OF WHAT THE WEB APP SHOULD HAVE IS THE FOLLOWING:**<br>
 
 1. build a community platform where users of our plugin can upload their models and download others peoples models.<br>
 
