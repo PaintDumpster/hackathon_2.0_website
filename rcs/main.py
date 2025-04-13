@@ -3,10 +3,12 @@ import os
 import re
 
 from gradio_client import Client, handle_file
-
+import time
 from dotenv import load_dotenv
 import os
-
+import threading
+import shutil
+import requests
 load_dotenv()
 
 HF_TOKEN = os.getenv("HF_TOKEN")
@@ -14,7 +16,7 @@ HF_TOKEN = os.getenv("HF_TOKEN")
 # ✅ Generate 3D model using Trellis
 def generate_3d_from_image(image_path):
     print(f"[Trellis] Sending image to Trellis: {image_path}")
-    client = Client("JeffreyXiang/TRELLIS", hf_token=HF_TOKEN)
+    client = Client("JeffreyXiang/TRELLIS", hf_token= HF_TOKEN)
     client.predict(api_name="/start_session")
 
     result = client.predict(
@@ -107,22 +109,33 @@ def upload():
         if file and file.filename:
             filename = file.filename
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        elif glb_url:
+        # ✅ Case 2: Trellis generated a GLB (or a glb_url was passed)
+        elif glb_url and glb_url.lower() != "none":
+            if glb_url.startswith("/"):
+                glb_url = f"http://127.0.0.1:5000{glb_url}"
             filename = os.path.basename(glb_url)
-            r = requests.get(glb_url)
-            with open(os.path.join(UPLOAD_FOLDER, filename), 'wb') as f:
-                f.write(r.content)
+            try:
+                r = requests.get(glb_url)
+                with open(os.path.join(UPLOAD_FOLDER, filename), 'wb') as f:
+                    f.write(r.content)
+            except Exception as e:
+                print("[⚠️] Failed to fetch GLB:", e)
+                filename = None  # fallback if broken
+
         else:
-            return "No file uploaded or URL provided", 400
+            print("[⚠️] No GLB file or URL provided.")
 
         # Save prompt image if provided
         image_filename = None
         if image_url:
+            if image_url.startswith("/"):
+                image_url = f"http://127.0.0.1:5000{image_url}"
             image_filename = os.path.basename(image_url)
             img_response = requests.get(image_url)
             if img_response.status_code == 200:
                 with open(os.path.join(UPLOAD_FOLDER, image_filename), 'wb') as f:
                     f.write(img_response.content)
+
 
         slug = re.sub(r'[\W_]+', '-', (model_name or filename).lower()).strip('-')
         uploaded_models.append({

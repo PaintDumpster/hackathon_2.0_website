@@ -21,19 +21,32 @@
     border-radius: 5px;
     cursor: pointer;
     }
+    #loading {
+    margin-top: 30px;
+    font-size: 18px;
+    color: #b107ea;
+    display: none;
+    }
 </style>
 </head>
 <body>
 
 <h1>Upload an image to generate your 3D model</h1>
 
-<form method="POST" enctype="multipart/form-data">
+<form method="POST" enctype="multipart/form-data" onsubmit="showLoading()">
     <input type="file" name="image" accept="image/*" required><br><br>
-    <input type="submit" value="Generate 3D">
+    <input type="submit" id="submitBtn" value="Generate 3D">
 </form>
 
+<div id="loading">🌀 Generating your model... Please wait.</div>
 <br>
 <a href="/">⬅ Back to Home</a>
+<script>
+    function showLoading() {
+    document.getElementById('submitBtn').disabled = true;
+    document.getElementById('loading').style.display = 'block';
+    }
+</script>
 
 </body>
 </html>
