@@ -17,6 +17,6 @@ THIS IS A WEB APP BASED ON FLASK. THE WEB APP SERVES AS AN ONLINE EXTENSION FOR 
 
 3. should be able to have a history of editing of models.(In development)<br>
 
-4. To show user metrics.<br>
+4. Allow user signup and login.<br>
 
-5. **Mayyyybe** host the The finetuned models that we use to generate the the 3D geometries (like meshyAI).<br>
+5. host the The finetuned models that we use to generate the the 3D geometries using trellis ai.<br>
