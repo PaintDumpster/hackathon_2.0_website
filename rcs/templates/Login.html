@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Log In – GG Worlds</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <div class="signup-container">
+    <h1 class="main-title">Welcome Back!</h1>
+    <form action="/login" method="POST" class="signup-form">
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <button type="submit" class="nav-btn">Log In</button>
+    </form>
+
+    <p class="login-link">
+      New to GG Worlds? <a href="/signup">Create an account</a>
+    </p>
+  </div>
+</body>
+</html>

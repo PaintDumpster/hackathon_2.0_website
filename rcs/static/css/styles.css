@@ -133,7 +133,7 @@
       font-size: 28px;
       margin-bottom: 40px;
     }
-    
+
 .signup-container {
       max-width: 500px;
       margin: 60px auto;
@@ -164,4 +164,20 @@
     .signup-form input::placeholder {
       color: #bbb;
     }
+.login-link {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: white;
+}
+
+.login-link a {
+  color: #A32CC4;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
     

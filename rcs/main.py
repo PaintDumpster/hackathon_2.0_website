@@ -69,6 +69,15 @@ def signup():
         return redirect('/')  # or a success page
     return render_template('signup.html')
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        # Check credentials here
+        return redirect('/')  # or a dashboard page
+    return render_template('login.html')
+
 @app.route('/model/<slug>')
 def model_detail(slug):
     for model in uploaded_models:
