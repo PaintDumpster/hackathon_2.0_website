@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Generate 3D from Image</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generate 3D from Image</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
+
 <body class="body_misra">
+  <div class="signup-container">
+    
+    <h1>Upload an image to generate your 3D model</h1>
 
-<h1>Upload an image to generate your 3D model</h1>
+    <form method="POST" enctype="multipart/form-data" onsubmit="showLoading()">
+        <input type="file" name="image" accept="image/*" class="input-field" required>
+        <input type="submit" id="submitBtn" value="Generate 3D" class="signup-btn">        
+    </form>
 
-<form method="POST" enctype="multipart/form-data" onsubmit="showLoading()">
-    <input type="file" name="image" accept="image/*" required><br><br>
-    <input type="submit" id="submitBtn" value="Generate 3D">
-</form>
+    <div id="loading">🔄 Generating your model... Please wait.</div>
+    <br>
+    <a href="/">⬅ Back to Home</a>
 
-<div id="loading">🌀 Generating your model... Please wait.</div>
-<br>
-<a href="/">⬅ Back to Home</a>
-<script>
+  </div>
+
+  <script>
     function showLoading() {
-    document.getElementById('submitBtn').disabled = true;
-    document.getElementById('loading').style.display = 'block';
+      document.getElementById('submitBtn').disabled = true;
+      document.getElementById('loading').style.display = 'block';
     }
-</script>
-
+  </script>
 </body>
 </html>
-
-

@@ -6,19 +6,20 @@
   <title>Upload Your 3D Model</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
-<body class="signup-body">
+<body>
   <div class="signup-container">
     <h1 class="main-title">Upload Your 3D Model</h1>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-        <input type="file" name="model" class="input-field" required><br>
-        <input type="text" name="model_name" placeholder="Model Name" class="input-field" required><br>
-        <input type="text" name="model_description" placeholder="Model Description" class="input-field"><br>
-        <input type="text" name="prompt_used" placeholder="Prompt Used" class="input-field"><br>
-        <input type="text" name="tags" placeholder="Tags" class="input-field"><br>
-        <input type="text" name="trellis_link" placeholder="https://embed.trellis.design/?fileId=..." class="input-field"><br>
-        <input type="submit" value="Upload Model" class="signup-btn">
-      </form>
-      
+    <form action="/upload" method="post" enctype="multipart/form-data" class="signup-form">
+      <input type="file" name="model" class="input-field" required>
+      <input type="text" name="model_name" placeholder="Model Name" class="input-field" required>
+      <input type="text" name="model_description" placeholder="Model Description" class="input-field">
+      <input type="text" name="prompt_used" placeholder="Prompt Used" class="input-field">
+      <input type="text" name="tags" placeholder="Tags" class="input-field">
+      <input type="text" name="trellis_link" placeholder="https://embed.trellis.design/?fileId=..." class="input-field">
+      <button type="submit" class="nav-btn">Upload Model</button>
+    </form>
   </div>
+  
+
 </body>
 </html>
