@@ -288,6 +288,27 @@
   margin: auto;
   text-align: center;
 }
+#loading {
+  color: #A32CC4;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 14px;
+  margin-top: 10px;
+  display: none; /* hidden by default */
+}
+
+a {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 14px;
+  color: #A32CC4;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
 
 /* Page body */
 .body_misra {
