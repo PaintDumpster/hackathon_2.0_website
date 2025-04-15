@@ -1,14 +1,15 @@
 # **BUILD A SERVER!**
 
-Delivery for HACKATHON_2.0.
+## **Delivery for HACKATHON_2.0**
 
-> **Faculty:**<br> Stasya Fedorova
-> **Team Members:**<br> Anka Ramy<br> Cantuarias Salvador<br> Elmalouli Nouhaila<br> Ozgok Misra<br> Papakosta Elena<br>
+> **Faculty:**<br> -[Fedorova Stasja](https://www.linkedin.com/in/stasja-fedorova/)<br>
 
+> **Team Members:**<br> -[Anka Ramy](https://www.linkedin.com/in/ramyanka/)<br> -[Cantuarias Salvador](https://www.linkedin.com/in/salvador-cantuarias-bb5715268/)<br> -[Elmalouli Nouhaila](https://www.linkedin.com/in/nouhaila-elmalouli-46517a208/)<br> -[Ozgok Misra](https://www.linkedin.com/in/m%C4%B1sra-serenay-%C3%B6zg%C3%B6k-gen%C3%A7-857530208/)<br> -[Papakosta Elena](https://www.linkedin.com/in/eleni-papakosta-035263236/)<br>
 
-> THE AIM OF THIS HACKATHON IS TO BUILD A WEB APP BASED ON THE FLASK LIBRARY. THE APP SHOULD HAVE HAVE DYNAMIC URLS AND GET/POST FUNCTIONS. THE APP SHOULD SERVE IN SME WAY TO OUR STUDIO PROJECT.
+## **OUR GENERAL IDEA:**
+THIS IS A WEB APP BASED ON FLASK. THE WEB APP SERVES AS AN ONLINE EXTENSION FOR OUR 3RD TERM STUDIO PROJECT. FOR MORE INFORMATION ABOUT THE PROJECT, PLEASE VISIT THE [PROJECT'S REPOSITORY](https://github.com/PaintDumpster/Applied_research_studio).
 
-## **OUR IDEA OF WHAT THE WEBSITE SHOULD DO IS THE FOLLOWING:**<br>
+## **OUR IDEA OF WHAT THE WEB APP SHOULD HAVE IS THE FOLLOWING:**<br>
 
 1. build a community platform where users of our plugin can upload their models and download others peoples models.<br>
 
@@ -16,6 +17,6 @@ Delivery for HACKATHON_2.0.
 
 3. should be able to have a history of editing of models.(In development)<br>
 
-4. To show user metrics.<br>
+4. Allow user signup and login.<br>
 
-5. **Mayyyybe** host the The finetuned models that we use to generate the the 3D geometries (like meshyAI).<br>
+5. host the The finetuned models that we use to generate the the 3D geometries using trellis ai.<br>
