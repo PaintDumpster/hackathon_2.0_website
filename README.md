@@ -9,6 +9,8 @@
 ## **OUR GENERAL IDEA:**
 THIS IS A WEB APP BASED ON FLASK. THE WEB APP SERVES AS AN ONLINE EXTENSION FOR OUR 3RD TERM STUDIO PROJECT. FOR MORE INFORMATION ABOUT THE PROJECT, PLEASE VISIT THE [PROJECT'S REPOSITORY](https://github.com/PaintDumpster/Applied_research_studio).
 
+This web app bridges our research project with an online community platform, enabling collaborative sharing and exploration of 3D models generated through our plugin.
+
 ## **OUR IDEA OF WHAT THE WEB APP SHOULD HAVE IS THE FOLLOWING:**<br>
 
 1. build a community platform where users of our plugin can upload their models and download others peoples models.<br>
